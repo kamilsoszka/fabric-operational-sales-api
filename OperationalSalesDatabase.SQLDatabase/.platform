@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SQLDatabase",
+    "displayName": "OperationalSalesDatabase"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4b629be1-fc26-b4fa-48c5-57d0d97b4126"
+  }
+}

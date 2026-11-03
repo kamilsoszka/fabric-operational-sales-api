@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/graphqlApi/definition/1.0.0/schema.json",
+  "datasources": [
+    {
+      "objects": [
+        {
+          "IsStoredProcedureQueryNode": false,
+          "actions": {
+            "Execute": "Enabled"
+          },
+          "fieldMappings": {},
+          "graphqlType": "CreateSalesOrder",
+          "isUserDefinedKeyField": false,
+          "relationships": [],
+          "sourceObject": "ops.CreateSalesOrder",
+          "sourceObjectType": "StoredProcedure"
+        },
+        {
+          "actions": {
+            "Query": "Enabled",
+            "Query_by_pk": "Enabled",
+            "Create": "Disabled",
+            "Update": "Disabled",
+            "Delete": "Disabled"
+          },
+          "fieldMappings": {
+            "ClientOrderReference": "ClientOrderReference",
+            "CustomerID": "CustomerID",
+            "DueDate": "DueDate",
+            "ModifiedDate": "ModifiedDate",
+            "OrderDate": "OrderDate",
+            "OrderStatus": "OrderStatus",
+            "SalesOrderID": "SalesOrderID",
+            "SubTotal": "SubTotal"
+          },
+          "graphqlType": "SalesOrder",
+          "isUserDefinedKeyField": false,
+          "relationships": [],
+          "sourceObject": "ops.SalesOrder",
+          "sourceObjectType": "Table"
+        },
+        {
+          "actions": {
+            "Query": "Enabled",
+            "Query_by_pk": "Enabled",
+            "Create": "Disabled",
+            "Update": "Disabled",
+            "Delete": "Disabled"
+          },
+          "fieldMappings": {
+            "LineTotal": "LineTotal",
+            "ModifiedDate": "ModifiedDate",
+            "OrderQuantity": "OrderQuantity",
+            "ProductID": "ProductID",
+            "SalesOrderID": "SalesOrderID",
+            "SalesOrderLineID": "SalesOrderLineID",
+            "UnitPrice": "UnitPrice",
+            "UnitPriceDiscount": "UnitPriceDiscount"
+          },
+          "graphqlType": "SalesOrderLine",
+          "isUserDefinedKeyField": false,
+          "relationships": [],
+          "sourceObject": "ops.SalesOrderLine",
+          "sourceObjectType": "Table"
+        }
+      ],
+      "sourceItemId": "4b629be1-fc26-b4fa-48c5-57d0d97b4126",
+      "sourceType": "SqlDbNative",
+      "sourceWorkspaceId": "00000000-0000-0000-0000-000000000000"
+    }
+  ]
+}
