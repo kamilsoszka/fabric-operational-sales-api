@@ -39,7 +39,7 @@ flowchart LR
 - Automatic mirroring to OneLake
 - Read-only SQL analytics endpoint
 - GitHub integration
-- Deployment Pipeline: Development → Test
+- Deployment Pipeline: Development to Test
 
 ## Operational Data Model
 
@@ -59,14 +59,14 @@ Provides a joined operational view containing order, customer, company, product,
 
 Implements the controlled write path:
 
-1. validates the client request identifier;
-2. validates quantity and discount;
-3. validates the customer;
-4. validates product availability;
-5. captures the current product price;
-6. calculates the subtotal;
-7. inserts the header and line in one transaction;
-8. rolls back the complete operation on failure.
+1. Validates the client request identifier.
+2. Validates quantity and discount.
+3. Validates the customer.
+4. Validates product availability.
+5. Captures the current product price.
+6. Calculates the subtotal.
+7. Inserts the header and line in one transaction.
+8. Rolls back the complete operation on failure.
 
 ## GraphQL API
 
@@ -135,28 +135,28 @@ Computed columns such as `LineTotal` are not replicated to OneLake and must be r
 - 295 products
 - 32 sample sales-order headers
 - 542 sample sales-order lines
-- transactional order creation validated
-- duplicate request protection validated
-- invalid quantity rejected
-- nonexistent customer rejected
-- nonexistent product rejected
-- rollback confirmed
+- Transactional order creation validated
+- Duplicate request protection validated
+- Invalid quantity rejected
+- Nonexistent customer rejected
+- Nonexistent product rejected
+- Rollback confirmed
 - GraphQL query validated
-- stored-procedure GraphQL mutation validated
-- automatic OneLake replication validated
+- Stored-procedure GraphQL mutation validated
+- Automatic OneLake replication validated
 - SQL analytics endpoint read-only behavior validated
 
 ### Test
 
-- database schema deployed successfully
+- Database schema deployed successfully
 - GraphQL API deployed successfully
-- direct table mutations remained disabled
-- stored-procedure mutation remained enabled
+- Direct table mutations remained disabled
+- Stored-procedure mutation remained enabled
 - Development transactional data was not copied
-- synthetic reference data was created independently
+- Synthetic reference data was created independently
 - SQL procedure execution validated
 - GraphQL mutation execution validated
-- automatic mirroring to OneLake validated
+- Automatic mirroring to OneLake validated
 
 ## CI/CD
 
@@ -173,11 +173,15 @@ Deployment moves definitions and metadata, not operational data.
 ## Repository Structure
 
 ```text
-OperationalSalesApi.GraphQLApi/
-OperationalSalesDatabase.SQLDatabase/
-docs/
-README.md
-LICENSE
+fabric-operational-sales-api/
+├── OperationalSalesApi.GraphQLApi/
+├── OperationalSalesDatabase.SQLDatabase/
+├── docs/
+│   ├── OPERATIONS.md
+│   ├── RESTORE.md
+│   └── VALIDATION.sql
+├── LICENSE
+└── README.md
 ```
 
 ## Restore Considerations
@@ -193,7 +197,7 @@ Git restores database and GraphQL definitions, but does not restore:
 - secrets or credentials;
 - capacity and regional configuration.
 
-See `docs/RESTORE.md` for the complete restore procedure.
+See [`docs/RESTORE.md`](docs/RESTORE.md) for the complete restore procedure.
 
 ## Known Limitations
 
@@ -207,10 +211,10 @@ See `docs/RESTORE.md` for the complete restore procedure.
 
 ## Documentation
 
-- `docs/RESTORE.md`
-- `docs/VALIDATION.sql`
-- `docs/OPERATIONS.md`
+- [`docs/RESTORE.md`](docs/RESTORE.md)
+- [`docs/VALIDATION.sql`](docs/VALIDATION.sql)
+- [`docs/OPERATIONS.md`](docs/OPERATIONS.md)
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
