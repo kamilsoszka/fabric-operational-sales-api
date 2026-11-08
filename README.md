@@ -32,6 +32,26 @@ flowchart LR
     DEV -->|Deployment Pipeline| TEST[Test workspace]
 ```
 
+## Project evidence
+
+### Development workspace
+
+The Development workspace contains the source-controlled `OperationalSalesApi` API for GraphQL, `OperationalSalesDatabase` SQL database, and its dependent SQL analytics endpoint.
+
+![Fabric Operational Sales API Development workspace](screenshots/01-development-workspace.png)
+
+### Secured GraphQL write surface
+
+The GraphQL schema exposes read queries and the controlled `executeCreateSalesOrder` stored-procedure mutation. Direct create, update, and delete mutations for the operational tables are disabled in the Fabric API configuration.
+
+![GraphQL API with secured mutations](screenshots/02-graphql-secure-mutations.png)
+
+### Successful Development-to-Test deployment
+
+The two-stage Fabric Deployment Pipeline promotes database and GraphQL definitions from Development to Test while environment-specific operational data remains isolated.
+
+![Successful Development-to-Test deployment](screenshots/03-deployment-pipeline-success.png)
+
 ## Fabric components
 
 | Component | Purpose |
