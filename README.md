@@ -1,9 +1,5 @@
 # Fabric Operational Sales API
 
-[![Microsoft Fabric](https://img.shields.io/badge/Microsoft_Fabric-SQL_Database-742774)](#)
-[![GraphQL](https://img.shields.io/badge/API-GraphQL-E10098?logo=graphql&logoColor=white)](#)
-[![OneLake](https://img.shields.io/badge/OneLake-Automatic_Mirroring-0078D4)](#)
-[![CI/CD](https://img.shields.io/badge/CI%2FCD-Development_to_Test-2EA44F)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A Microsoft Fabric portfolio project demonstrating a secure translytical architecture that combines transactional sales-order processing, automatic OneLake mirroring, read-only analytical access, a controlled GraphQL API, native Git integration, and a Development-to-Test Deployment Pipeline.
